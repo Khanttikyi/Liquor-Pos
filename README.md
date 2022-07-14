@@ -1,0 +1,2 @@
+# Liquor-Pos
+npm install 
