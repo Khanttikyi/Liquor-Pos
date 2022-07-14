@@ -1,0 +1,152 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+//
+// Table
+//
+
+.table-summary {
+    width: 100% !important;
+    border-collapse: collapse;
+    flex-wrap: wrap;
+    align-items: stretch;
+    table-layout: fixed;
+}
+
+.table-summary,
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.table-summary th,
+.table-summary td {
+    padding: 10px 5px;
+    border: 1px solid #aaa;
+}
+
+.table-summary thead>tr>td:not(:last-child),
+.table-summary tfoot>tr>td:not(:last-child) {
+    background: rgb(236, 245, 249);
+    color: #fff;
+    font-weight: bold;
+}
+
+// .table-summary tbody>tr>td:not(:last-child),
+// .table-summary tfoot>tr>td:not(:last-child){
+//     background: rgb(122, 196, 236);
+//     color: #fff;
+// }
+.table-summary tbody>tr:nth-child(even) {
+    background: rgb(236, 245, 249);
+    color: black;
+
+    td:not(:last-child) {
+        background: none;
+    }
+}
+
+.table ion-col {
+    display: flex;
+    align-self: center;
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table-header {
+    background-color: rgb(246, 229, 155);
+    color: black;
+    font-weight: bold;
+    line-height: 35px
+}
+
+.form-control {
+    --border: 0px;
+    border: 1px #a0a0a0 solid;
+    border-radius: 3px;
+    height: 35px !important;
+    width: 100%;
+}
+
+.form-control>.native-input.sc-ion-input-md {
+    padding-left: 15px;
+}
+
+
+.control-label {
+    display: inline-block;
+    line-height: 38px;
+    padding-right: 15px;
+    color: #fff;
+    font-size: 13px;
+    text-align: -webkit-right !important;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.card {
+    padding: 20px 0px;
+    box-shadow: white;
+    box-shadow: white 2px 2px 5px 1px;
+}
+
+.px15-py15 {
+    padding: 15px 15px;
+}
+
+.btn {
+    width: 100px;
+    min-width: 100px;
+    width: 100%;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.btn-save {
+    background-color: rgb(247, 234, 178);
+    --background: rgb(247, 234, 178);
+    width: 100px;
+    min-width: 100px;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.toolbar-primary {
+    background-color: rgb(246, 229, 155);
+    --background: rgb(246, 229, 155);
+    color: black;
+    font-weight: bold;
+    line-height: 35px
+}
