@@ -5,12 +5,25 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid >
+  <ion-grid>
 
     <form class="form" [formGroup]="createForm">
       <ion-card class="px15-py15">
         <ion-row>
-          <ion-col size="3" class="text-center">
+
+          <ion-col size="3" >
+            <ion-label class="control-label ">Category</ion-label>
+          </ion-col>
+          <ion-col size="6">
+            <ion-select class="form-control" formControlName="category" placeholder="Category">
+              <ion-select-option [value]=item.name *ngFor="let item of categoryOption">{{item.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col size="3" >
             <ion-label class="control-label ">Name</ion-label>
           </ion-col>
           <ion-col size="6">
@@ -18,15 +31,16 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="3" class="text-center">
+          <ion-col size="3" >
             <ion-label class="control-label ">Brand</ion-label>
           </ion-col>
           <ion-col size="6">
             <ion-input class="form-control" formControlName="brand" placeholder="Brand"></ion-input>
           </ion-col>
         </ion-row>
+       
         <ion-row>
-          <ion-col size="3" class="text-center">
+          <ion-col size="3" >
             <ion-label class="control-label ">Size</ion-label>
           </ion-col>
           <ion-col size="6">
@@ -34,15 +48,15 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="3" class="text-center">
+          <ion-col size="3" >
             <ion-label class="control-label ">Price</ion-label>
           </ion-col>
           <ion-col size="6">
-            <ion-input class="form-control" formControlName="price" placeholder="Price"></ion-input>
+            <ion-input class="form-control" type="number" formControlName="price" placeholder="Price"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="3" class="text-center">
+          <ion-col size="3" >
             <ion-label class="control-label ">Stock</ion-label>
           </ion-col>
           <ion-col size="6">
