@@ -116,7 +116,11 @@
     box-shadow: white;
     box-shadow: white 2px 2px 5px 1px;
 }
-
+.text-black{
+    --ion-color-contrast: black !important;
+    color: black !important;
+    font-weight: bold;
+}
 .px15-py15 {
     padding: 15px 15px;
 }

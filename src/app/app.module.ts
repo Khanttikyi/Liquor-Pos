@@ -13,10 +13,11 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { HttpConfigInterceptor } from './services/httpconfig.interceptor';
 import { KBZLoadingModule } from './services/loading/loading.module';
 import { DecimalPipe } from '@angular/common';
+import { ComponentModule } from './components/components.module';
 
 @NgModule({
   declarations: [AppComponent, CreateDataComponent, CreateDataItemComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,KBZLoadingModule, FormsModule, ReactiveFormsModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,KBZLoadingModule, FormsModule, ReactiveFormsModule,HttpClientModule,ComponentModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     CreateDataComponent, CreateDataItemComponent,

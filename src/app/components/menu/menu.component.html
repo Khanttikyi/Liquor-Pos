@@ -1,0 +1,48 @@
+<ion-header no-border>
+  <ion-toolbar color="danger" class="bg-red">
+    <ion-buttons slot="end">
+      <ion-menu-button (click)="showMenu=true" (click)="changeMenu()" class="text-black" autoHide="false">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-label class="control-label text-black" style="margin-left: 15px;">Liquor POS</ion-label>
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
+  </ion-toolbar>
+</ion-header>
+
+<ion-split-pane contentId="menu-content" [ngClass]="showMenu ? 'zindexPlus' : 'menulayout' ">
+  <ion-menu menuId="customMenu" contentId="menu-content" style="--width:100% !important;" (ionDidClose)="removeIndex()"
+    side="end" type="overlay">
+    <ion-header no-border>
+      <ion-toolbar color="danger" style="--ion-color-base: transparent !important;">
+        <ion-label class="control-label text-black" style="margin-left: 15px;" (click)="redirectHome()">Liquor POS</ion-label>
+        <ion-buttons slot="end">
+          <ion-button color="dark" (click)="closeMenu()">
+            <ion-icon name="close" class="text-black"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col class="ion-no-padding">
+            <ion-list class="new-menu-list">
+              <div *ngFor="let item of pages">
+                <ion-item lines="none" [ngClass]="{'active': (activeMenu==item.title)}"
+                  (click)="changeActiveMenu(item.title)">
+                  <ion-label (click)="displayPage(item.url)">{{item.title}}</ion-label>
+                </ion-item>
+              </div>
+              <ion-item lines="none" >
+              <ion-label (click)="logout()">Logout</ion-label>
+            </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  </ion-menu>
+
+
+
+</ion-split-pane>
