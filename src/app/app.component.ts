@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Category } from './const/category-const';
+import { DatabaseService } from './services/database.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,5 +15,12 @@ export class AppComponent {
     { title: 'Setting', url: '/folder/setting', icon: 'settings' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor(private databaseService: DatabaseService) {
+
+  }
+  ngOnInit() {
+    this.databaseService.init()
+   
+  }
+
 }

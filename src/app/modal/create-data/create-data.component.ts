@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { Category } from 'src/app/const/category-const';
 import { ApiService } from 'src/app/services/api.service';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-create-data',
@@ -13,12 +14,18 @@ export class CreateDataComponent implements OnInit {
   @Input() type: any
   @Input() data: any
   code: string = "CA-00"
-  tempCategory = Category
+  tempCategory = []
   createForm: FormGroup
-  constructor(private modalCtrl: ModalController, private api: ApiService) { }
+  constructor(private modalCtrl: ModalController, private api: ApiService, private database: DatabaseService) { }
 
   ngOnInit() {
     this.loadForm(this.data)
+    this.getCategory()
+  }
+  getCategory() {
+    this.database.getCategoryTable().then(res => {
+      this.tempCategory = res
+    })
   }
   loadForm(data?) {
     this.createForm = new FormGroup({

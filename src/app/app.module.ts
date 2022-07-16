@@ -14,15 +14,22 @@ import { HttpConfigInterceptor } from './services/httpconfig.interceptor';
 import { KBZLoadingModule } from './services/loading/loading.module';
 import { DecimalPipe } from '@angular/common';
 import { ComponentModule } from './components/components.module';
+import { DatabaseService } from './services/database.service';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 
 @NgModule({
   declarations: [AppComponent, CreateDataComponent, CreateDataItemComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,KBZLoadingModule, FormsModule, ReactiveFormsModule,HttpClientModule,ComponentModule],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     CreateDataComponent, CreateDataItemComponent,
+    HttpClient,
+    DecimalPipe,
+    DatabaseService,
+    SQLite,
+    SQLitePorter,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
-    HttpClient,DecimalPipe
   ],
   bootstrap: [AppComponent],
 })
